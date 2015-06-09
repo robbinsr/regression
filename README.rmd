@@ -1,26 +1,25 @@
 ---
-output: pdf_document
+    keep_md: yes
 ---
-##Report: What changes MPG?  --- **Regression Models Course Project**
+**Example: Recognizing assumption violations in linear regression**
 ```{r include=FALSE}
 #install.packages("MASS",repos='http://cran.us.r-project.org')
 library(MASS)
 #install.packages("datasets",repos='http://cran.us.r-project.org')
 library(datasets)
-#install.packages("leaps",repos='http://cran.us.r-project.org')
+install.packages("leaps",repos='http://cran.us.r-project.org')
 library(leaps)
 #install.packages("car",repos='http://cran.us.r-project.org')
 library(car)
-#install.packages("scatterplot3d",repos='http://cran.us.r-project.org')
+install.packages("scatterplot3d",repos='http://cran.us.r-project.org')
 library(scatterplot3d)
 data(mtcars)
 m<-mtcars
 ```
-**Acknowledgement**
-The web site **Quick R** [http://www.statmethods.net/] was an invaluable resource.
 
 **Executive Summary**
-The first purpose of this research was to determine whether an automatic or a manual transmission is better for increasing miles per gallon (MPG). The second purpose was to quantify the MPG difference between automatic and manual transmissions. Based on the data set provided, and only the data set provided, there is **no statistically significant relationship between whether a car has an automatic or a standard transmission and MPG**. Instead, the one statistically significant factor in this data set which can describe the increasing or decreasing of MPG in a linear and easily interpretable way is the number of cylinders in a car's engine. On average, the decrease in MPG from a 4 cylinder to a 6 or a 6 to a 8 cylinder engine is 5.75 miles per gallon. 4-cylinder vehicles in this data set on average have 26.38 MPG, 6-cylinder vehicles, 20.63 MPG, and 8-cylinders, 14.88 MPG. Further, and taking into consideration **quantifying uncertainty, (and the variability seen in the data) I expect the range of decrease in MPG from a 4 to 6 or a 6 to 8 cylinder should be no less than 4.43 miles per gallon (2 cyl times a 2.215 MPG decrease) and no greater than 7.07 gallons (2 cyl times 3.53 MPG decrease), in 95 out of 100 cases**.
+
+The primary purpose of this research was to determine whether an automatic or a manual transmission is better for increasing miles per gallon (MPG). The second purpose was to quantify the MPG difference between automatic and manual transmissions. Based on the data set provided, and only the data set provided, there is **no statistically significant relationship between whether a car has an automatic or a standard transmission and MPG**. Instead, the one statistically significant factor in this data set which can describe the increasing or decreasing of MPG in a linear and easily interpretable way is the number of cylinders in a car's engine. On average, the decrease in MPG from a 4 cylinder to a 6 or a 6 to a 8 cylinder engine is 5.75 miles per gallon. 4-cylinder vehicles in this data set on average have 26.38 MPG, 6-cylinder vehicles, 20.63 MPG, and 8-cylinders, 14.88 MPG. Further, and taking into consideration **quantifying uncertainty, (and the variability seen in the data) I expect the range of decrease in MPG from a 4 to 6 or a 6 to 8 cylinder should be no less than 4.43 miles per gallon (2 cyl times a 2.215 MPG decrease) and no greater than 7.07 gallons (2 cyl times 3.53 MPG decrease), in 95 out of 100 cases**.
 ```{r echo=FALSE}
 x<-m$cyl
 y<-m$mpg
