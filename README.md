@@ -1,5 +1,6 @@
-**Example: Recognizing assumption violations in linear regression**
+You re reading the README.md file in the **regression** GitHub repository associated with Russ Robbins. Select **regression** above to see the affiliated files. Alternatively, see the summary of the analysis below.
 
+**Example: Recognizing assumption violations in linear regression**
 
 **Executive Summary**
 
